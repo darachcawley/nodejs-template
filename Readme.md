@@ -150,6 +150,10 @@ Press `F5` in VS Code, it looks for a top level `.vscode` folder with a `launch.
         ]
     }
 ```
+## Deploying to OpenShift
+oc new-build https://github.com/darachcawley/nodejs-template.git#master --strategy=pipeline --name=nodejs-develop --source-secret=git-secret --build-secret=dcawley-xpaas-git-secret -n dcawley-xpaas
+
+oc set env bc/nodejs-develop APP_NAME=nodejs GIT_BRANCH="master" GIT_CREDENTIALS=dcawley-xpaas-git-secret GIT_URL=https://github.com/darachcawley/nodejs-template.git BASE_IMAGE=nodejs:8 BUILD_TAG='latest' DEPLOY_TAG='dev' -n dcawley-xpaas
 
 ## Testing
 The tests are  written in Mocha and the assertions done using Chai
