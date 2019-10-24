@@ -3,7 +3,7 @@
   "name": "dev",
   "values": [{
     "key": "HOST",
-    "value": "http://nodejs-misanchez-dev.apps.na39.openshift.opentlc.com",
+    "value": "http://nodejs-dcawley-xpaas.apps.na311.openshift.opentlc.com",
     "type": "text",
     "description": "",
     "enabled": true
